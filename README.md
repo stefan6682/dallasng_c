@@ -10,7 +10,7 @@ To use it, just reference an external component
 
 ```
 external_components:
-  - source: github://nrandell/dallasng
+  - source: github://stefan6682/dallasng_c
 ```
 
 Set up the dallas component and sensor
