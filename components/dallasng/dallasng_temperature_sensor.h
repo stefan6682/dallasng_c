@@ -114,8 +114,9 @@ namespace esphome
                 dumpScratchpad(scratchpad);
 
                 DSTherm::Scratchpad &s = scratchpad;
-                long temp = s.getTemp();
-                *value = (float)temp / 1000.0f;
+                long temp = s.getTemp2();
+#                *value = (float)temp / 1000.0f;
+                *value = (int)temp / 16, (10000 * ((int)temp % 16)) / 16);
 
                 ESP_LOGD(TAG, "'%s' got temperature as %ld (%f)", get_name().c_str(), temp, *value);
                 return true;
